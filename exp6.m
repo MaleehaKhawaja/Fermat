@@ -84,5 +84,19 @@ C;
 [ EtoP1( MWmap(P) ) : P in V ];
 //This returns [ (1 : 0), (1 : 1), (0 : 1), (1 : 1) ]
 
+//
+R<x>:=PolynomialRing(Rationals());
+K:=NumberField(x^4-10*x^2+1);
+
+L<theta>:=Subfields(K)[2][1];
+L; //L=Q(sqrt2)
+assert theta^2 eq 8; //theta eq 2*sqrt(2) or -2*sqrt(2)
+
+lstb:=[2/theta, -2/theta];
+for b in lstb
+    do B:=K!b; //Making sure b lives in K 
+    assert IsSquare(B) eq false;
+end for;
+
 
 

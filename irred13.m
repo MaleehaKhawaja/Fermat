@@ -46,3 +46,11 @@ CL:=ChangeRing(C, L);
 
 assert TwoCoverDescent(CL) eq {};
 //This shows that the fake 2-selmer set of C/L is empty - thus, by Bruin-Stoll [5], C(L) is empty.
+
+//Alternative proof that C(L) is empty
+
+Qx<x>:=PolynomialRing(Rationals());
+f:=-32*x^6 - 12*x^4 + 20*x^2 + 13;
+L<a>:=NumberField(x^2-3);
+f:=ChangeRing(f,L);
+assert HasPointsEverywhereLocally(f,2) eq false;

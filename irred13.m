@@ -29,6 +29,14 @@ A;
 
 B;
 
+//Let L=Q(sqrt3). We show there are no non-exceptional quadratic 
+//points on the quadratic twist of X over L.
+
+X3:=QuadraticTwist(X,3);
+J3:=Jacobian(X3);
+assert TwoCoverDescent(X3) eq {}; //Therefore X3(Q) is empty by Bruin--Stoll.
+
+
 //Let L = Q(sqrt(3)). We show that there are no L-rational points on the curve C where C is the following hyperelliptic curve.
 
 Qx<x>:=PolynomialRing(Rationals());

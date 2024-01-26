@@ -36,21 +36,14 @@ X3:=QuadraticTwist(X,3);
 J3:=Jacobian(X3);
 assert TwoCoverDescent(X3) eq {}; //Therefore X3(Q) is empty by Bruin--Stoll.
 
-
 //Let L = Q(sqrt(3)). We show that there are no L-rational points on the curve C where C is the following hyperelliptic curve.
 
 Qx<x>:=PolynomialRing(Rationals());
-C:=HyperellipticCurve(-32*x^6 - 12*x^4 + 20*x^2 + 13);
-L<a>:=NumberField(x^2-3);
-CL:=ChangeRing(C, L);
-
-assert TwoCoverDescent(CL) eq {};
-//This shows that the fake 2-selmer set of C/L is empty - thus, by Bruin-Stoll [5], C(L) is empty.
-
-//Alternative proof that C(L) is empty
-
-Qx<x>:=PolynomialRing(Rationals());
 f:=-32*x^6 - 12*x^4 + 20*x^2 + 13;
+C:=HyperellipticCurve(f);
 L<a>:=NumberField(x^2-3);
-f:=ChangeRing(f,L);
-assert HasPointsEverywhereLocally(f,2) eq false;
+CL:=ChangeRing(C,L);
+OL:=IntegerRing(L);
+Q:=Factorisation(13*OL)[1][1];
+
+assert IsLocallySolvable(CL, Q) eq false; 

@@ -22,15 +22,19 @@ Order(P);
 Chabauty(P);
 //P has has infinite order thus we can use the Magma implementation of Chabauty to determine that C(Q)={(0, 1), (0, -1)}.
 
+//
 
+R<x>:=PolynomialRing(Rationals());
+f:=-4*x^6+3^3;
+C:=HyperellipticCurve(f);
+assert IsLocallySolvable(C,2) eq false; //Thus C(Q) is empty.
 
-C3 := HyperellipticCurve(-4*x^6+27);
-TwoCoverDescent(C3);
-//This tells us that the fake 2-selmer set of C3/Q is empty. Thus, by Bruin-Stoll [5], C3(Q) is empty. 
+//
 
-C6 := HyperellipticCurve(-4*x^6+216);
-TwoCoverDescent(C6);
-//This tells us that the fake 2-selmer set of C3/Q is empty. Thus, by Bruin-Stoll [5], C3(Q) is empty. 
+R<x>:=PolynomialRing(Rationals());
+f:=-4*x^6+6^3;
+C:=HyperellipticCurve(f);
+assert IsLocallySolvable(C,2) eq false; //Thus C(Q) is empty.
 
 //----------------------------------------------------------------------------------------------------------------------------//
 

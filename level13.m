@@ -24,4 +24,4 @@ Phi := hom< U ->  W |  [ k((pi(phi(g)))@@mu) : g in G ] >;
 
 Q,l := quo< W | Image(Phi) >;
 
-asswert #Q eq 1;
+assert #Q eq 1;

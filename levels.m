@@ -37,8 +37,13 @@ L:=ext<K | T^2-lam>;
 D:=Discriminant(MaximalOrder(L));
 assert Valuation(D,P) eq 2;
 
-// Get 3 levels: P, P^4
+// Get 2 levels: P, P^4
+//We first show there are no newforms of level P.
 
+H:=NewSubspace(HilbertCuspForms(K, P));
+assert Dimension(H) eq 0;
+
+//
 
 H:=NewSubspace(HilbertCuspForms(K,P^4));
 assert Dimension(H) eq 2;

@@ -1,3 +1,5 @@
+//This code, until specified, supports the proof of Lemma 3.1.
+
 K<th>:=CompositeFields(QuadraticField(2),QuadraticField(3))[1];
 
 OK:=MaximalOrder(K);
@@ -38,6 +40,9 @@ D:=Discriminant(MaximalOrder(L));
 assert Valuation(D,P) eq 2;
 
 // Get 2 levels: P, P^4
+
+//The remaining code supports the claims made in Section 5.
+
 //We first show there are no newforms of level P.
 
 H:=NewSubspace(HilbertCuspForms(K, P));

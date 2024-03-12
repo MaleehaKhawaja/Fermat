@@ -6,7 +6,8 @@ P:=Factorisation(2*OK)[1,1];
 
 assert Valuation(2*OK,P) eq 4; // totally ramified
 
-RayClassGroup(P^2,[1,2,3,4]);
+assert #RayClassGroup(P^2,[1,2,3,4]) eq 2;
+assert #RayClassGroup(1*OK,[1,2,3,4]) eq 2;
 
 
 // isogeny signatures

@@ -1,4 +1,3 @@
-
 R<x>:=PolynomialRing(Rationals());
 
 E:=EllipticCurve("432b1");

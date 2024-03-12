@@ -1,5 +1,3 @@
-//The following code supports the 
-//proof of Lemma 4.4
 
 K<th>:=CompositeFields(QuadraticField(2),QuadraticField(3))[1];
 

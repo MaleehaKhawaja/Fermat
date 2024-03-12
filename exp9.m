@@ -1,6 +1,16 @@
 Qx<x>:=PolynomialRing(Rationals());
 
-L:=QuadraticField(3);
+E1:=HyperellipticCurve(4*x^3+1);
+E1d:=EllipticCurve(E1);
+E1d:=MinimalModel(E1d);
+assert Discriminant(E1d) eq -27;
+
+rk,tf:=Rank(E1d);
+assert rk eq 0 and tf eq true;
+MordellWeilGroup(E1d);
+
+//
+
 
 C:=HyperellipticCurve(2*(-4*x^9+1));
 

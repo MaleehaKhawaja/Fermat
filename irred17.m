@@ -21,7 +21,7 @@ B:=eqsab[2]/eqsab[3];
 
 assert (B^2) + (A*B) + (2*B) - (A^3) + (4*A) eq 0;
 
-//Let L=Q(sqrt2). We check that there are no L-rational points on the following hyperelliptic curve C.
+//Let L=Q(sqrt2). We check that there are no L-rational points on the following plane curve C.
 
 A<x,y>:=AffineSpace(Rationals(), 2);
 f:=x^4-9*y^4+x^3+9*x*y^2-2*x^2+x+1;

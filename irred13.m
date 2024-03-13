@@ -1,3 +1,14 @@
+//We first check the claims made about the elliptic curve with Cremona label 26b1.
+
+E:=EllipticCurve("26b1");
+K:=CompositeFields(QuadraticField(2),QuadraticField(3))[1];
+
+EK:=ChangeRing(E,K);
+assert #TorsionSubgroup(E) eq #TorsionSubgroup(EK);
+for d in [2,3,6]
+	do Rank(QuadraticTwist(E,d));					//Therefore E(K)=E(L) where L=Q(sqrt3)
+end for;
+
 //We compute the map between X0(26) and the elliptic curve with Cremona label 26b1.
 
 X:=SimplifiedModel(SmallModularCurve(26));

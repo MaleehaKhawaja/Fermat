@@ -7,7 +7,7 @@ P:=Factorisation(2*OK)[1,1];
 assert Valuation(2*OK,P) eq 4; // totally ramified
 
 
-// Want the map Phi : OK^* --> R^* / (R^*)^2     R=OK/P^9
+// Want the map Phi : OK^* --> R^* / (R^*)^2     R=OK/P^6
 
 
 R,pi:=quo<OK | P^6>;

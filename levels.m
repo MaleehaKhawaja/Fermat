@@ -1,3 +1,8 @@
+
+//---------------------------------------------------------------//
+//This part of the code supports the claims made in Lemma 13 of Khawaja's thesis 
+//which is Lemma 3.1 in the arXiv version of the paper.
+
 K<th>:=CompositeFields(QuadraticField(2),QuadraticField(3))[1];
 
 OK:=MaximalOrder(K);
@@ -36,6 +41,9 @@ KT<T>:=PolynomialRing(K);
 L:=ext<K | T^2-lam>;
 D:=Discriminant(MaximalOrder(L));
 assert Valuation(D,P) eq 2;
+
+//-----------------------------------------------------------//
+//-----------------------------------------------------------//
 
 // Get 2 levels: P, P^4
 

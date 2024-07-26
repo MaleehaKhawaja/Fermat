@@ -1,5 +1,5 @@
 
-//---------------------------------------------------------------//
+//---------------------------------------------------------------------------------//
 //This part of the code supports the claims made in Lemma 13 of Khawaja's thesis 
 //which is Lemma 3.1 in the arXiv version of the paper.
 

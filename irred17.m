@@ -1,13 +1,24 @@
 //We first check the claims made about the elliptic curve with Cremona label 34a1
 
 E:=EllipticCurve("34a1");
-K:=CompositeFields(QuadraticField(2),QuadraticField(3))[1];
 
-EK:=ChangeRing(E,K);
-assert #TorsionSubgroup(E) eq #TorsionSubgroup(EK);
-for d in [2,3,6]
-	do Rank(QuadraticTwist(E,d));					//Therefore E(K)=E(L) where L=Q(sqrt2)
-end for;
+K<a>:=CompositeFields(QuadraticField(2), QuadraticField(3))[1];
+assert a^4-10*a^2+1 eq 0;                       // a = sqrt(2)+sqrt(3)
+
+L:=QuadraticField(2);
+
+EK:=BaseChange(E, K);                           //Base change E over K
+EL:=BaseChange(E,L);                            //Base change E over L
+
+G:=Generators(EK);
+
+assert #G eq 2;
+
+assert G[1] in EL;
+assert Order(G[1]) eq 6;
+
+assert G[2] in EL;
+assert Order(G[2]) eq 0;				//Therefore E(K)=E(L) where L=Q(sqrt2)
 
 //We find the map between X0(34) and the elliptic curve with Cremona label 34a1 (which we denote here by E for ease).
 

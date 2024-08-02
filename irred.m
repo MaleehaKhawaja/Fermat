@@ -10,6 +10,7 @@ assert Valuation(2*OK,P) eq 4; // totally ramified
 assert #RayClassGroup(P^2,[1,2,3,4]) eq 2;
 assert #RayClassGroup(1*OK,[1,2,3,4]) eq 2;
 
+assert RayClassField(P^2) eq RayClassField(1*OK);
 
 // isogeny signatures
 
